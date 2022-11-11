@@ -179,10 +179,10 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 
 
 | Przypadek użycia                                  | Aukcja | Produkt | Sprzedający | Kupujący|
-| ------------------------------------------------- | ------ | ------- | --- | --- |
-| UC1: Wystawienia produktu na aukcję               |    C   |    C    |  |     |
-| UC2: Licytowanie                                               |  C, U, R  |  U, R    | |
-UC3: Wprowadzenie opłaty za produkt                                              |     |  R, U    |  |
-UC4: Wysyłka produktu                                              |  D   |  D    |  |
+| ------------------------------------------------- | ------ | ------- | ----------- | ------- |
+| UC1: Wystawienia produktu na aukcję               |    C   |    C    |      C      |         |
+| UC2: Licytowanie                                  |  C,U,R |  U, R   |      R      |  C,R,U  |
+| UC3: Wprowadzenie opłaty za produkt               |        |  R, U   |      R      |  C,R,U  |
+| UC4: Wysyłka produktu                             |    D   |    D    |      R      |    R    |
 
 
