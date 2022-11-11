@@ -6,7 +6,7 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 
 ## Procesy biznesowe
 
----
+--- 
 <a id="bc1"></a>
 ### BC1: Sprzedaż aukcyjna 
 
@@ -50,10 +50,13 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* ...
+* [UC3](#uc3): Otrzymanie płatności za produkt
+* [UC4](#uc4): Wysyłanie produktu
 
 [Kupujący](#ac2)
-* ...
+* [UC2](#uc2): Licytowanie o produkt
+* [UC3](#uc3): Wprowadzenie opłaty za produkt
+* [UC4](#uc4): Odbiór produktu
 
 ---
 <a id="uc1"></a>
@@ -77,18 +80,73 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Licytowanie
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. [Kupujący](#ac2) wpisuje kwotę, jaką może zapłacić za produkt.
+2. System weryfikuje, że wpisana przez użytkownika kwota jest większa od obecnej ceny za produkt.
+3. System prosi użytkownika zaakceptować regulamin o obowiązku zapłaty przy wygraniu aukcji.
+4. [Kupujący](#ac2) akceptuje regulamin.
+5. System oczekuję na wprowadzenie wyższej kwoty niż obecna lub oczekuję na zakończenie terminu aukcji.
+6. Po zakończeniu terminu aukcji system wybiera [kupującego](#ac2), który wprowadził największą kwotę za produkt.
+7. System wysyła wiadomość o wygranej aukcji do [kupującego](#ac2).
+8. System wysyła wiadomość o zakończeniu aukcji do [sprzedającego](#ac1).
 
 **Scenariusze alternatywne:** 
 
-1.A. ...
-* 4.A.1. ...
+2.A. Wpisana przez użytkownika kwota nie jest wyższa niż obecna cena za produkt.
+* 2.A.1. System informuje o błędnie wpisanej kwocie i prosi wprowadzić wyższą kwotę.
+* 2.A.2. Przejdź do kroku 3.
 
+3.A. Użytkownik nie zaakceptował regulamin.
+* 3.A.1. System prosi ponownie zaakceptować regulamin albo oferta użytkownika nie będzie więcej aktywna.
+* 3.A.2. Przejdź do kroku 4.
+
+---
+
+<a id="uc3"></a>
+### UC3: Wprowadzenie opłaty za produkt
+
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
+
+**Scenariusz główny:** 
+1. System prosi [kupującego](#ac2) o wprowadzenie danych dotyczących opłaty.
+2. [Kupujący](#ac2) wprowadza dane dotyczące opłaty.
+3. System weryfikuje wprowadzone dane.
+4. [Kupujący](#ac2) dokonuje płatność za produkt.
+5. System sprawdza, że całkowita kwota produktu została zaksięgowana na koncie.
+6. System informuje [kupującego](#ac2) o pomyślnie zakończonej płatności. 
+7. [Sprzedający](#ac1) otrzymuje opłatę za produkt.
+
+**Scenariusze alternatywne:** 
+
+3.A. Podano niepoprawne lub niekompletne dane dla opłaty.
+* 3.A.1. System informuje o błędnie podanych danych.
+* 3.A.2. Przejdź do kroku 4.
+
+5.A. Niepełna kwota towaru została zaksięgowana na koncie.
+* 5.A.1. System informuje że nie cała kwota towaru została zaksięgowana na koncie.
+* 5.A.2. Przejdź do kroku 6.
+
+---
+
+<a id="uc4"></a>
+### UC4: Wysyłka produktu
+
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
+
+**Scenariusz główny:** 
+1. ...
+2. ...
+3. ...
+
+**Scenariusze alternatywne:** 
+
+3.A. Podano niepoprawne lub niekompletne dane dla opłaty.
+* 3.A.1. System informuje o błędnie podanych danych.
+* 3.A.2. Przejdź do kroku 4.
 ---
 
 ## Obiewkty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
@@ -120,6 +178,8 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 | Przypadek użycia                                  | Aukcja | Produkt | ... |
 | ------------------------------------------------- | ------ | ------- | --- |
 | UC1: Wystawienia produktu na aukcję               |    C   |    C    | ... |
-| ???                                               |  ...   |  ...    | ... |
+| UC2: Licytowanie                                               |  ...   |  ...    | ... |
+UC3: Wprowadzenie opłaty za produkt                                              |  ...   |  ...    | ... |
+UC4: PUK                                              |  ...   |  ...    | ... |
 
 
