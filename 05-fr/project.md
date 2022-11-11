@@ -57,7 +57,7 @@ Osoba chcąca zakupić produkt na aukcji.
 * [UC2](#uc2): Licytowanie o produkt
 * [UC3](#uc3): Wprowadzenie opłaty za produkt
 * [UC4](#uc4): Odbiór produktu
-
+* [UC5](#uc5): Dodanie komentarzu oraz oceny do produktu.
 ---
 <a id="uc1"></a>
 ### UC1: Wystawienie produktu na aukcję
