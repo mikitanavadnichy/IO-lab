@@ -138,15 +138,18 @@ Osoba chcąca zakupić produkt na aukcji.
 **Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:** 
-1. ...
-2. ...
-3. ...
+1. [Kupujący](#ac2) wprowadza swoje dane dla wysyłki produktu dla firmy kurierskiej.
+2. System weryfikuje poprawność wprowadzonych danych.
+3. System wysyła dane dla wysyłki do [sprzedającego](#ac1).
+4. [Sprzedający](#ac1) zamawia kuriera w celu wysłania paczki z produktem na określony adres.
+5. System informuje [kupującego](#ac2) oraz [sprzedającego](#ac1) o nadanie przesyłki.
+
 
 **Scenariusze alternatywne:** 
 
-3.A. Podano niepoprawne lub niekompletne dane dla opłaty.
-* 3.A.1. System informuje o błędnie podanych danych.
-* 3.A.2. Przejdź do kroku 4.
+2.A. Podano niepoprawne lub niekompletne dane dla wysyłki .
+* 2.A.1. System informuje o błędnie podanych danych.
+* 2.A.2. Przejdź do kroku 3.
 ---
 
 ## Obiewkty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
