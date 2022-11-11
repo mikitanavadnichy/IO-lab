@@ -178,11 +178,11 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 ## Macierz CRUDL
 
 
-| Przypadek użycia                                  | Aukcja | Produkt | ... |
-| ------------------------------------------------- | ------ | ------- | --- |
-| UC1: Wystawienia produktu na aukcję               |    C   |    C    | ... |
-| UC2: Licytowanie                                               |  ...   |  ...    | ... |
-UC3: Wprowadzenie opłaty za produkt                                              |  ...   |  ...    | ... |
-UC4: PUK                                              |  ...   |  ...    | ... |
+| Przypadek użycia                                  | Aukcja | Produkt | Sprzedający | Kupujący|
+| ------------------------------------------------- | ------ | ------- | --- | --- |
+| UC1: Wystawienia produktu na aukcję               |    C   |    C    |  |     |
+| UC2: Licytowanie                                               |  C, U, R  |  U, R    | |
+UC3: Wprowadzenie opłaty za produkt                                              |     |  R, U    |  |
+UC4: Wysyłka produktu                                              |  D   |  D    |  |
 
 
